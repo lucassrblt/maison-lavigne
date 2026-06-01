@@ -8,7 +8,7 @@ avis, et un module de réservation (couverts → date → service midi/soir → 
 > réalisation concept illustre le type de vitrine que je conçois pour la restauration. Aucun
 > établissement réel, aucune donnée n'est enregistrée.
 
-🔗 **Démo en ligne :** _(à déployer — Vercel)_
+🔗 **Démo en ligne :** [maison-lavigne.vercel.app](https://maison-lavigne.vercel.app)
 
 ## Aperçu
 
