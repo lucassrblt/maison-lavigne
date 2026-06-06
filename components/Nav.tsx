@@ -33,7 +33,7 @@ export default function Nav() {
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8 flex items-center justify-between h-[74px]">
         <a href="#top" className="flex flex-col leading-none">
           <span className="font-display text-2xl text-ink">{resto.name}</span>
-          <span className="font-display text-[0.56rem] font-semibold uppercase tracking-[0.22em] text-paprika mt-0.5">
+          <span className="font-display text-[0.56rem] font-semibold uppercase tracking-[0.22em] text-terracotta mt-0.5">
             {resto.tagline}
           </span>
         </a>

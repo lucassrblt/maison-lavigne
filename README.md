@@ -1,24 +1,27 @@
-# Maison Lavigne — Site vitrine restaurant / bistrot
+# La Barcarola — Refonte de site pour une trattoria
 
-Site vitrine d'un bistrot de marché avec **carte dynamique** et **réservation de table en ligne** :
-présentation de la maison et du chef, carte filtrable par catégorie et par régime, ambiance,
-avis, et un module de réservation (couverts → date → service midi/soir → créneau → confirmation).
+Refonte concept du site de **La Barcarola**, trattoria franco-italienne à Asnières-sur-Seine :
+vitrine éditoriale avec **carte dynamique** et **réservation de table en ligne** — présentation de
+la maison, carte filtrable par catégorie et par régime, ambiance, avis, et un module de réservation
+(couverts → date → service midi/soir → créneau → confirmation).
 
-> ⚠️ **Projet de démonstration.** « Maison Lavigne » est une **enseigne fictive** : cette
-> réalisation concept illustre le type de vitrine que je conçois pour la restauration. Aucun
-> établissement réel, aucune donnée n'est enregistrée.
+> ⚠️ **Proposition indépendante.** Ce site est une **refonte concept**, non officielle et **sans
+> affiliation** avec l'établissement. La Barcarola existe réellement (1 rue Eugénie Eboué, Asnières) ;
+> les infos pratiques sont réelles, le détail de la carte est une reconstitution de démonstration, et
+> aucune donnée n'est enregistrée. Objectif : montrer ce qu'une vraie vitrine apporterait face à la
+> page METRO générique actuelle.
 
-🔗 **Démo en ligne :** [maison-lavigne.vercel.app](https://maison-lavigne.vercel.app)
+🔗 **Démo en ligne :** [la-barcarola.vercel.app](https://la-barcarola.vercel.app)
 
 ## Aperçu
 
-- **Direction artistique** bistrot chic : crème menu, bordeaux-aubergine profond, accent paprika —
-  une identité **colorée** distincte des autres réalisations. Display Bricolage Grotesque × corps
-  Newsreader (serif éditoriale « carte »).
-- **Carte dynamique** : filtres par catégorie (entrées / plats / desserts / cave) et par régime
-  (végétarien, vegan, sans gluten), avec compteurs en direct.
-- **Réservation de table** : disponibilités calculées côté serveur selon le service (midi/soir),
-  le jour de fermeture et le nombre de couverts.
+- **Direction artistique** méditerranéenne chic : ivoire chaud, basilic profond, accent terracotta,
+  touches d'olive et d'ocre. Display **Fraunces** (serif éditorial) × corps **Newsreader** — une
+  identité distincte, sans cliché tricolore.
+- **Carte dynamique** : filtres par catégorie (antipasti / pizze / pasta / secondi / dolci / cave)
+  et par régime (végétarien, vegan, halal), avec compteurs en direct.
+- **Réservation de table** : disponibilités calculées côté serveur selon le service (midi/soir,
+  7j/7 — dîner seul le week-end) et le nombre de couverts.
 - **100 % responsive**, animations au scroll, `prefers-reduced-motion` respecté.
 
 ## Stack
@@ -32,7 +35,7 @@ avis, et un module de réservation (couverts → date → service midi/soir → 
 
 ```
 app/
-├── page.tsx              # Landing : hero, carte, chef, ambiance, réservation, avis
+├── page.tsx              # Landing : hero, carte, maison, ambiance, réservation, avis
 ├── layout.tsx            # Fonts + métadonnées SEO/OpenGraph
 ├── globals.css           # Design system (tokens, textures, animations)
 └── api/
@@ -43,7 +46,7 @@ components/
 ├── Menu.tsx              # Carte dynamique filtrable (client)
 ├── ReservationForm.tsx   # Réservation de table (client)
 └── Reveal.tsx            # Apparition au scroll (IntersectionObserver)
-lib/data.ts               # Contenu (carte, chef, ambiance, horaires, avis)
+lib/data.ts               # Contenu (carte, maison, ambiance, horaires, avis)
 ```
 
 ## Démarrage
@@ -58,7 +61,8 @@ npm run build    # build production
 
 La carte et la réservation sont fonctionnelles mais ne persistent rien (démo). Pour une vraie
 mise en ligne : gérer la carte via un CMS, brancher une base + un email de confirmation sur
-`/api/reservation`, et synchroniser les disponibilités avec un vrai plan de salle.
+`/api/reservation`, et synchroniser les disponibilités avec un vrai plan de salle. Remplacer aussi
+les visuels (slots `dish-slot`) par de vraies photographies du restaurant et des plats.
 
 ---
 

@@ -73,8 +73,8 @@ export default function ReservationForm() {
 
   if (reference) {
     return (
-      <div className="bg-wine text-cream p-8 sm:p-12 rounded-sm text-center">
-        <span className="font-display text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-paprika">
+      <div className="bg-basil text-cream p-8 sm:p-12 rounded-sm text-center">
+        <span className="font-display text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-terracotta">
           Table réservée
         </span>
         <p className="display-md mt-3">À très bientôt.</p>
@@ -88,11 +88,11 @@ export default function ReservationForm() {
             })}{" "}
           à {time}.
         </p>
-        <div className="mt-6 inline-block border border-paprika rounded-sm px-6 py-3">
+        <div className="mt-6 inline-block border border-terracotta rounded-sm px-6 py-3">
           <span className="font-display text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-cream/70">
             Référence
           </span>
-          <span className="block font-display text-3xl font-bold text-paprika">{reference}</span>
+          <span className="block font-display text-3xl font-bold text-terracotta">{reference}</span>
         </div>
         <p className="mt-6 font-display text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-cream/50">
           Démo — aucune donnée enregistrée
@@ -114,8 +114,8 @@ export default function ReservationForm() {
             onClick={() => setCovers(n)}
             className="w-10 h-10 font-display font-semibold transition-all duration-200"
             style={{
-              border: `1px solid ${covers === n ? "var(--wine)" : "var(--line)"}`,
-              backgroundColor: covers === n ? "var(--wine)" : "transparent",
+              border: `1px solid ${covers === n ? "var(--basil)" : "var(--line)"}`,
+              backgroundColor: covers === n ? "var(--basil)" : "transparent",
               color: covers === n ? "var(--cream)" : "var(--ink)",
               borderRadius: "2px",
             }}
@@ -127,8 +127,8 @@ export default function ReservationForm() {
           onClick={() => setCovers(9)}
           className="px-3 h-10 font-display text-sm font-semibold transition-all"
           style={{
-            border: `1px solid ${covers >= 9 ? "var(--wine)" : "var(--line)"}`,
-            backgroundColor: covers >= 9 ? "var(--wine)" : "transparent",
+            border: `1px solid ${covers >= 9 ? "var(--basil)" : "var(--line)"}`,
+            backgroundColor: covers >= 9 ? "var(--basil)" : "transparent",
             color: covers >= 9 ? "var(--cream)" : "var(--ink)",
             borderRadius: "2px",
           }}
@@ -150,7 +150,7 @@ export default function ReservationForm() {
               onClick={() => setDate(d.iso)}
               className="shrink-0 w-[62px] py-2 text-center transition-all duration-200"
               style={{
-                border: `1px solid ${active ? "var(--paprika)" : "var(--line)"}`,
+                border: `1px solid ${active ? "var(--terracotta)" : "var(--line)"}`,
                 backgroundColor: active ? "rgba(200,71,47,0.1)" : "transparent",
                 borderRadius: "2px",
               }}
@@ -175,7 +175,7 @@ export default function ReservationForm() {
             </p>
           )}
           {!loading && closed && (
-            <p className="font-display text-xs uppercase tracking-[0.14em] text-paprika">
+            <p className="font-display text-xs uppercase tracking-[0.14em] text-terracotta">
               Fermé ce jour-là — choisissez une autre date.
             </p>
           )}
@@ -194,8 +194,8 @@ export default function ReservationForm() {
                       onClick={() => setTime(sl.time)}
                       className="py-2 font-display text-sm font-medium transition-all duration-200 disabled:opacity-25 disabled:line-through"
                       style={{
-                        border: `1px solid ${time === sl.time ? "var(--paprika)" : "var(--line)"}`,
-                        backgroundColor: time === sl.time ? "var(--paprika)" : "transparent",
+                        border: `1px solid ${time === sl.time ? "var(--terracotta)" : "var(--line)"}`,
+                        backgroundColor: time === sl.time ? "var(--terracotta)" : "transparent",
                         color: time === sl.time ? "var(--cream)" : "var(--ink)",
                         borderRadius: "2px",
                       }}
@@ -226,10 +226,10 @@ export default function ReservationForm() {
               value={form[f.k]}
               placeholder={f.ph}
               onChange={(e) => setForm({ ...form, [f.k]: e.target.value })}
-              className="mt-1.5 w-full bg-transparent border border-line rounded-sm px-3 py-2.5 text-ink outline-none focus:border-paprika transition-colors"
+              className="mt-1.5 w-full bg-transparent border border-line rounded-sm px-3 py-2.5 text-ink outline-none focus:border-terracotta transition-colors"
             />
             {errors[f.k] && (
-              <span className="mt-1 block font-display text-[0.6rem] font-semibold uppercase tracking-[0.06em] text-paprika">
+              <span className="mt-1 block font-display text-[0.6rem] font-semibold uppercase tracking-[0.06em] text-terracotta">
                 {errors[f.k]}
               </span>
             )}
@@ -244,13 +244,13 @@ export default function ReservationForm() {
             value={form.note}
             placeholder="Allergie, occasion, accès PMR…"
             onChange={(e) => setForm({ ...form, note: e.target.value })}
-            className="mt-1.5 w-full bg-transparent border border-line rounded-sm px-3 py-2.5 text-ink outline-none focus:border-paprika transition-colors"
+            className="mt-1.5 w-full bg-transparent border border-line rounded-sm px-3 py-2.5 text-ink outline-none focus:border-terracotta transition-colors"
           />
         </label>
       </div>
 
       {errors.time && (
-        <p className="mt-3 font-display text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-paprika">
+        <p className="mt-3 font-display text-[0.62rem] font-semibold uppercase tracking-[0.08em] text-terracotta">
           {errors.time}
         </p>
       )}

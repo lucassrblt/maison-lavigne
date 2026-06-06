@@ -20,7 +20,7 @@ const schema = z.object({
 function reference(seed: string): string {
   let h = 5381;
   for (let i = 0; i < seed.length; i++) h = (h * 33) ^ seed.charCodeAt(i);
-  return `ML-${(h >>> 0).toString(36).toUpperCase().slice(0, 5)}`;
+  return `LB-${(h >>> 0).toString(36).toUpperCase().slice(0, 5)}`;
 }
 
 export async function POST(req: NextRequest) {
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     {
       ok: true,
       reference: reference(`${name}|${date}|${time}|${covers}`),
-      message: "Table réservée. À très bientôt à la Maison Lavigne.",
+      message: "Table réservée. À très bientôt à La Barcarola.",
     },
     { status: 201 },
   );

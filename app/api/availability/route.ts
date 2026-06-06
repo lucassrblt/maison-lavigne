@@ -7,14 +7,15 @@ import { NextRequest, NextResponse } from "next/server";
  */
 
 // Services par jour de semaine : liste de [début, fin] en heures.
+// La Barcarola — ouvert 7j/7 ; déjeuner + dîner en semaine, dîner seul le week-end.
 const SERVICES: Record<number, [number, number][]> = {
-  0: [[12, 15]], // dimanche : midi
-  1: [], // lundi : fermé
-  2: [[12, 14], [19, 22]],
-  3: [[12, 14], [19, 22]],
-  4: [[12, 14], [19, 22]],
-  5: [[12, 14], [19, 23]],
-  6: [[12, 14], [19, 23]],
+  0: [[19, 23]], // dimanche : dîner
+  1: [[12, 15], [19, 23]],
+  2: [[12, 15], [19, 23]],
+  3: [[12, 15], [19, 23]],
+  4: [[12, 15], [19, 23]],
+  5: [[12, 15], [19, 23]],
+  6: [[19, 23]], // samedi : dîner
 };
 
 function hash(str: string): number {
@@ -44,7 +45,7 @@ export function GET(req: NextRequest) {
   // Les grandes tablées ont moins de créneaux libres.
   const pressure = covers >= 7 ? 60 : covers >= 5 ? 48 : 34;
 
-  const out = services.map(([start, end], idx) => {
+  const out = services.map(([start, end]) => {
     const slots: { time: string; available: boolean }[] = [];
     for (let h = start; h < end; h++) {
       for (const m of [0, 30]) {
@@ -53,7 +54,7 @@ export function GET(req: NextRequest) {
         slots.push({ time, available: seed % 100 > pressure });
       }
     }
-    return { label: idx === 0 ? "Midi" : "Soir", slots };
+    return { label: start < 16 ? "Midi" : "Soir", slots };
   });
 
   return NextResponse.json({ date, covers, closed: false, services: out });

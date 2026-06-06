@@ -1,10 +1,13 @@
-/* Données de démonstration — enseigne fictive « Maison Lavigne ». */
+/* Contenu — La Barcarola, trattoria franco-italienne à Asnières-sur-Seine.
+   Refonte concept (proposition indépendante). La carte ci-dessous est une
+   reconstitution plausible : l'établissement et ses infos pratiques sont réels,
+   le détail des plats est une démonstration. */
 
-export type DietTag = "Végétarien" | "Vegan" | "Sans gluten";
+export type DietTag = "Végétarien" | "Vegan" | "Halal";
 
 export type Dish = {
   id: string;
-  category: "Entrées" | "Plats" | "Desserts" | "Cave & boissons";
+  category: "Antipasti" | "Pizze" | "Pasta" | "Secondi" | "Dolci" | "Cave & boissons";
   name: string;
   desc: string;
   price: number;
@@ -12,209 +15,305 @@ export type Dish = {
   signature?: boolean;
 };
 
-export const categories = ["Entrées", "Plats", "Desserts", "Cave & boissons"] as const;
-export const dietTags: DietTag[] = ["Végétarien", "Vegan", "Sans gluten"];
+export const categories = [
+  "Antipasti",
+  "Pizze",
+  "Pasta",
+  "Secondi",
+  "Dolci",
+  "Cave & boissons",
+] as const;
+export const dietTags: DietTag[] = ["Végétarien", "Vegan", "Halal"];
 
 export const menu: Dish[] = [
-  // Entrées
+  // Antipasti
   {
-    id: "e1",
-    category: "Entrées",
-    name: "Velouté de potimarron",
-    desc: "Crème de châtaigne, huile de noisette torréfiée, graines.",
-    price: 11,
-    tags: ["Végétarien", "Sans gluten"],
-  },
-  {
-    id: "e2",
-    category: "Entrées",
-    name: "Œuf parfait 63°",
-    desc: "Mousseline de pomme de terre fumée, lard de Colonnata, ciboulette.",
-    price: 13,
-    tags: [],
+    id: "a1",
+    category: "Antipasti",
+    name: "Burrata Pugliese",
+    desc: "Burrata crémeuse des Pouilles, tomates confites, basilic, huile d'olive vierge.",
+    price: 12,
+    tags: ["Végétarien"],
     signature: true,
   },
   {
-    id: "e3",
-    category: "Entrées",
-    name: "Betterave & chèvre frais",
-    desc: "Betteraves rôties au thym, chèvre des Causses, vinaigrette miel.",
-    price: 12,
-    tags: ["Végétarien", "Sans gluten"],
+    id: "a2",
+    category: "Antipasti",
+    name: "Vitello tonnato",
+    desc: "Fines tranches de veau, crème onctueuse au thon, câpres et roquette.",
+    price: 13,
+    tags: [],
   },
   {
-    id: "e4",
-    category: "Entrées",
-    name: "Tartare de truite",
-    desc: "Truite de l'Adour, aneth, crème acidulée, blinis maison.",
+    id: "a3",
+    category: "Antipasti",
+    name: "Caprese di bufala",
+    desc: "Mozzarella di bufala, tomates de saison, basilic, fleur de sel.",
+    price: 11,
+    tags: ["Végétarien"],
+  },
+  {
+    id: "a4",
+    category: "Antipasti",
+    name: "Bruschette al pomodoro",
+    desc: "Pain grillé frotté à l'ail, tomates fraîches, origan, huile d'olive.",
+    price: 8,
+    tags: ["Végétarien", "Vegan"],
+  },
+  {
+    id: "a5",
+    category: "Antipasti",
+    name: "Antipasto della casa",
+    desc: "Assortiment de charcuteries italiennes et légumes grillés marinés.",
     price: 14,
     tags: [],
   },
-  // Plats
+
+  // Pizze
+  {
+    id: "z1",
+    category: "Pizze",
+    name: "Margherita D.O.P.",
+    desc: "Tomate San Marzano, mozzarella fior di latte, basilic frais.",
+    price: 13,
+    tags: ["Végétarien"],
+    signature: true,
+  },
+  {
+    id: "z2",
+    category: "Pizze",
+    name: "Diavola",
+    desc: "Tomate, mozzarella, spianata piccante, un soupçon de piment.",
+    price: 16,
+    tags: [],
+  },
+  {
+    id: "z3",
+    category: "Pizze",
+    name: "Quattro Formaggi",
+    desc: "Mozzarella, gorgonzola, parmesan, pecorino, filet de miel.",
+    price: 16,
+    tags: ["Végétarien"],
+  },
+  {
+    id: "z4",
+    category: "Pizze",
+    name: "Vegetariana",
+    desc: "Tomate, mozzarella, légumes grillés du marché, roquette.",
+    price: 15,
+    tags: ["Végétarien"],
+  },
+  {
+    id: "z5",
+    category: "Pizze",
+    name: "Pollo & verdure",
+    desc: "Tomate, mozzarella, poulet mariné halal, poivrons, oignons doux.",
+    price: 16,
+    tags: ["Halal"],
+  },
+
+  // Pasta
   {
     id: "p1",
-    category: "Plats",
-    name: "Joue de bœuf braisée",
-    desc: "Sept heures au vin de Bordeaux, purée à la fourchette, carottes glacées.",
-    price: 24,
-    tags: ["Sans gluten"],
+    category: "Pasta",
+    name: "Spaghetti alle Vongole",
+    desc: "Palourdes, ail, persil plat, vin blanc, huile d'olive.",
+    price: 18,
+    tags: [],
     signature: true,
   },
   {
     id: "p2",
-    category: "Plats",
-    name: "Cabillaud rôti",
-    desc: "Dos de cabillaud, beurre blanc citronné, poireaux fondants.",
-    price: 23,
-    tags: ["Sans gluten"],
+    category: "Pasta",
+    name: "Tagliatelle al Ragù",
+    desc: "Pâtes fraîches maison, ragù de bœuf mijoté, parmesan affiné.",
+    price: 16,
+    tags: ["Halal"],
   },
   {
     id: "p3",
-    category: "Plats",
-    name: "Risotto aux cèpes",
-    desc: "Carnaroli crémeux, cèpes poêlés, vieux parmesan, huile de truffe.",
-    price: 21,
-    tags: ["Végétarien", "Sans gluten"],
+    category: "Pasta",
+    name: "Penne all'Arrabbiata",
+    desc: "Tomate, ail, piment, persil — relevée comme à Rome.",
+    price: 14,
+    tags: ["Végétarien", "Vegan"],
   },
   {
     id: "p4",
-    category: "Plats",
-    name: "Curry de légumes & coco",
-    desc: "Légumes de saison, lait de coco, riz basmati, coriandre.",
-    price: 19,
-    tags: ["Vegan", "Sans gluten"],
+    category: "Pasta",
+    name: "Risotto ai Funghi",
+    desc: "Riz carnaroli crémeux, champignons poêlés, parmesan, huile de truffe.",
+    price: 17,
+    tags: ["Végétarien"],
   },
   {
     id: "p5",
-    category: "Plats",
-    name: "Magret de canard",
-    desc: "Cuisson rosée, sauce aux figues, gratin dauphinois.",
-    price: 26,
-    tags: ["Sans gluten"],
+    category: "Pasta",
+    name: "Lasagne della Nonna",
+    desc: "Lasagnes maison gratinées, sauce tomate longuement mijotée, béchamel.",
+    price: 16,
+    tags: [],
+  },
+
+  // Secondi
+  {
+    id: "s1",
+    category: "Secondi",
+    name: "Escalope Milanese",
+    desc: "Escalope panée dorée, spaghetti à la tomate fraîche, citron.",
+    price: 18,
+    tags: ["Halal"],
+    signature: true,
   },
   {
-    id: "p6",
-    category: "Plats",
-    name: "Burger Maison",
-    desc: "Bœuf race à viande, tomme affinée, oignons confits, frites fraîches.",
+    id: "s2",
+    category: "Secondi",
+    name: "Saltimbocca alla Romana",
+    desc: "Veau, sauge, jambon de Parme, jus au marsala, pommes grenaille.",
+    price: 19,
+    tags: [],
+  },
+  {
+    id: "s3",
+    category: "Secondi",
+    name: "Filet de dorade",
+    desc: "Dorade poêlée, légumes méditerranéens rôtis, huile d'olive citronnée.",
     price: 20,
     tags: [],
   },
-  // Desserts
+  {
+    id: "s4",
+    category: "Secondi",
+    name: "Pollo alla Cacciatora",
+    desc: "Poulet halal mijoté tomate, olives, herbes, polenta crémeuse.",
+    price: 18,
+    tags: ["Halal"],
+  },
+
+  // Dolci
   {
     id: "d1",
-    category: "Desserts",
-    name: "Paris-Brest",
-    desc: "Praliné noisette maison, pâte à choux croustillante.",
-    price: 10,
+    category: "Dolci",
+    name: "Tiramisù della Casa",
+    desc: "Mascarpone, café serré, biscuits imbibés, cacao amer.",
+    price: 8,
     tags: ["Végétarien"],
     signature: true,
   },
   {
     id: "d2",
-    category: "Desserts",
-    name: "Tarte fine aux pommes",
-    desc: "Pommes du Limousin, caramel beurre salé, glace vanille.",
-    price: 9,
+    category: "Dolci",
+    name: "Panna Cotta",
+    desc: "Crème vanillée fondante, coulis de fruits rouges maison.",
+    price: 7,
     tags: ["Végétarien"],
   },
   {
     id: "d3",
-    category: "Desserts",
-    name: "Mousse au chocolat noir",
-    desc: "Chocolat 70 %, fleur de sel, tuile cacao.",
-    price: 9,
-    tags: ["Végétarien", "Sans gluten"],
+    category: "Dolci",
+    name: "Tarte au citron meringuée",
+    desc: "Un clin d'œil français : citron de Menton, meringue légère.",
+    price: 7,
+    tags: ["Végétarien"],
   },
   {
     id: "d4",
-    category: "Desserts",
-    name: "Sorbets de saison",
-    desc: "Trois parfums au choix, fruits de producteurs.",
-    price: 8,
-    tags: ["Vegan", "Sans gluten"],
+    category: "Dolci",
+    name: "Sorbets & glaces maison",
+    desc: "Trois parfums au choix, sorbets aux fruits de saison.",
+    price: 6,
+    tags: ["Végétarien", "Vegan"],
   },
+
   // Cave & boissons
   {
     id: "c1",
     category: "Cave & boissons",
-    name: "Bordeaux rouge — Château (verre)",
-    desc: "Sélection du sommelier, médoc ou saint-émilion selon arrivage.",
-    price: 7,
-    tags: ["Vegan", "Sans gluten"],
+    name: "Chianti Classico (verre)",
+    desc: "Rouge toscan, sur le fruit et les épices — l'accord pasta par excellence.",
+    price: 6,
+    tags: ["Vegan"],
   },
   {
     id: "c2",
     category: "Cave & boissons",
-    name: "Blanc sec — Entre-deux-Mers (verre)",
-    desc: "Vif et minéral, parfait sur le poisson.",
+    name: "Pinot Grigio (verre)",
+    desc: "Blanc vif et floral, parfait sur le poisson et les antipasti.",
     price: 6,
-    tags: ["Vegan", "Sans gluten"],
+    tags: ["Vegan"],
   },
   {
     id: "c3",
     category: "Cave & boissons",
-    name: "Limonade artisanale",
-    desc: "Citron de Menton, infusion maison, sans alcool.",
-    price: 5,
-    tags: ["Vegan", "Sans gluten"],
+    name: "Aperol Spritz",
+    desc: "Aperol, prosecco, eau pétillante, tranche d'orange. L'apéritif.",
+    price: 8,
+    tags: ["Vegan"],
   },
   {
     id: "c4",
     category: "Cave & boissons",
-    name: "Café & mignardises",
-    desc: "Torréfaction locale, petit assortiment sucré.",
+    name: "Limonata maison",
+    desc: "Citron pressé, infusion maison, sans alcool.",
     price: 5,
+    tags: ["Vegan"],
+  },
+  {
+    id: "c5",
+    category: "Cave & boissons",
+    name: "Caffè & cantuccini",
+    desc: "Ristretto serré, petits biscuits aux amandes.",
+    price: 4,
     tags: ["Végétarien"],
   },
 ];
 
 export const chef = {
-  name: "Camille Lavigne",
-  role: "Chef & fondatrice",
-  bio: "Formée dans les maisons bordelaises, Camille cuisine au rythme du marché. Une carte courte qui tourne chaque semaine, des producteurs choisis à la main, et l'envie simple de bien recevoir.",
+  name: "Said Nasry",
+  role: "Aux fourneaux, depuis le premier jour",
+  bio: "La Barcarola, c'est une cuisine franco-italienne faite maison : pâtes fraîches, pizze au four, et l'envie de recevoir comme à la maison. Des produits simples, bien choisis, des options halal et végétariennes, et un accueil de quartier — celui qui vous fait revenir.",
 };
 
 export const ambiance = [
   "La salle",
+  "La terrasse climatisée",
+  "Le four à pizza",
+  "Les pâtes fraîches",
   "Le comptoir",
-  "La cave",
-  "En cuisine",
-  "La terrasse",
   "Le dressage",
 ];
 
 export const hours: { day: string; value: string }[] = [
-  { day: "Lundi", value: "Fermé" },
-  { day: "Mar — Jeu", value: "12h–14h · 19h–22h" },
-  { day: "Ven — Sam", value: "12h–14h · 19h–23h" },
-  { day: "Dimanche", value: "12h–15h" },
+  { day: "Lun — Mer", value: "11h30–14h30 · 19h–22h30" },
+  { day: "Jeudi", value: "11h30–14h30 · 19h–23h" },
+  { day: "Vendredi", value: "11h–15h · 19h–22h30" },
+  { day: "Sam — Dim", value: "19h–22h30" },
 ];
 
 export type Review = { name: string; text: string; source: string };
 export const reviews: Review[] = [
   {
-    name: "Julie M.",
-    text: "La joue de bœuf est un poème. Service chaleureux, addition honnête. On reviendra.",
+    name: "Karim B.",
+    text: "Parmi les meilleures pizzas d'Asnières : pâte fine, garniture généreuse. Accueil adorable, on se sent comme chez soi.",
     source: "Google",
   },
   {
-    name: "Pierre & Sophie",
-    text: "Réservé en deux clics pour un anniversaire. Table parfaite, carte des vins au top.",
+    name: "Sophie & Marc",
+    text: "Pâtes fraîches excellentes et service aux petits soins, même un vendredi plein à craquer. On revient toujours.",
     source: "TheFork",
   },
   {
-    name: "Nadia K.",
-    text: "Enfin un bistrot qui pense aussi aux options végé sans bâcler. Le risotto aux cèpes, une tuerie.",
+    name: "Léa D.",
+    text: "Terrasse agréable, cuisine maison et addition raisonnable. La vraie cantine italienne de quartier.",
     source: "Google",
   },
 ];
 
 export const resto = {
-  name: "Maison Lavigne",
-  tagline: "Bistrot de marché",
-  baseline: "On cuisine ce que le marché donne.",
-  address: "22 rue Sainte-Colombe, 33000 Bordeaux",
-  phone: "05 56 12 34 56",
-  est: "2018",
+  name: "La Barcarola",
+  tagline: "Trattoria franco-italienne",
+  baseline: "Cucina fatta in casa, à Asnières.",
+  address: "1 rue Eugénie Eboué, 92600 Asnières-sur-Seine",
+  phone: "01 40 86 24 32",
+  area: "Asnières-sur-Seine",
 };

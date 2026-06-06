@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Newsreader } from "next/font/google";
+import { Fraunces, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -16,13 +17,13 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maison-lavigne.demo"),
-  title: "Maison Lavigne — Bistrot · Bordeaux",
+  metadataBase: new URL("https://la-barcarola.demo"),
+  title: "La Barcarola — Trattoria franco-italienne · Asnières-sur-Seine",
   description:
-    "Bistrot de marché, cuisine du jour et belle cave. Découvrez la carte et réservez votre table en ligne. (Site de démonstration — projet concept.)",
+    "Cuisine franco-italienne faite maison à Asnières-sur-Seine : pâtes fraîches, pizze au four, options halal & végétariennes. Découvrez la carte et réservez votre table. (Refonte concept — site de démonstration.)",
   openGraph: {
-    title: "Maison Lavigne — Bistrot",
-    description: "Cuisine du marché & belle cave. Réservez votre table.",
+    title: "La Barcarola — Trattoria franco-italienne",
+    description: "Pâtes fraîches, pizze au four & terrasse à Asnières. Réservez votre table.",
     type: "website",
   },
 };
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${bricolage.variable} ${newsreader.variable} h-full`}
+      className={`${fraunces.variable} ${newsreader.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

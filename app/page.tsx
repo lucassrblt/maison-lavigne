@@ -11,8 +11,8 @@ export default function Home() {
     <div id="top" className="flex flex-col flex-1">
       <Nav />
 
-      {/* ============ HERO (bloc bordeaux) ============ */}
-      <section className="relative min-h-screen flex items-end bg-wine text-cream overflow-hidden">
+      {/* ============ HERO (bloc basilic) ============ */}
+      <section className="relative min-h-screen flex items-end bg-basil text-cream overflow-hidden">
         <div
           className="absolute inset-0 opacity-90"
           style={{
@@ -23,26 +23,26 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1320px] w-full px-5 sm:px-8 pb-16 pt-32 grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-8">
             <div className="reveal eyebrow" style={{ animationDelay: "0.05s" }}>
-              {resto.tagline} · Bordeaux — depuis {resto.est}
+              {resto.tagline} · {resto.area}
             </div>
             <h1 className="mt-5 display-xl">
               <span className="reveal block" style={{ animationDelay: "0.12s" }}>
-                Maison
+                La
               </span>
               <span
                 className="reveal block"
-                style={{ animationDelay: "0.22s", color: "var(--paprika)" }}
+                style={{ animationDelay: "0.22s", color: "var(--terracotta)" }}
               >
-                Lavigne
+                Barcarola
               </span>
             </h1>
             <p
               className="reveal mt-7 max-w-lg font-body text-lg sm:text-xl text-cream/85 leading-relaxed"
               style={{ animationDelay: "0.34s" }}
             >
-              <span className="serif-accent">« On cuisine ce que le marché donne. »</span>{" "}
-              Une carte courte qui tourne chaque semaine, une belle cave, et
-              l'envie simple de bien recevoir.
+              <span className="serif-accent">« Cucina fatta in casa. »</span>{" "}
+              Pâtes fraîches, pizze au four et recettes franco-italiennes —
+              l'envie simple de recevoir comme à la maison.
             </p>
             <div
               className="reveal mt-9 flex flex-wrap gap-3"
@@ -58,23 +58,23 @@ export default function Home() {
           </div>
 
           <div className="reveal lg:col-span-4" style={{ animationDelay: "0.4s" }}>
-            <div className="dish-slot aspect-[4/5] w-full rounded-sm" data-label="La salle · Bordeaux" />
+            <div className="dish-slot aspect-[4/5] w-full rounded-sm" data-label="La terrasse · Asnières" />
             <div className="mt-3 flex justify-between font-display text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-cream/70">
               <span>{resto.address.split(",")[0]}</span>
-              <span className="text-paprika">★ 4,8 · 540 avis</span>
+              <span className="text-terracotta">★ 9,4 · 128 avis</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ============ BANDEAU ============ */}
-      <div className="bg-paprika text-cream">
+      <div className="bg-terracotta text-cream">
         <div className="mx-auto max-w-[1320px] px-5 sm:px-8 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-display text-sm font-medium text-center">
-          <span>🍷 Cave de 120 références</span>
+          <span>🍕 Pizze au four</span>
           <span className="opacity-50">·</span>
-          <span>🥖 Produits du marché des Capucins</span>
+          <span>🍝 Pâtes fraîches maison</span>
           <span className="opacity-50">·</span>
-          <span>🌿 Options végé & sans gluten</span>
+          <span>🌿 Options halal & végé · 7j/7</span>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
             <Reveal delay={100}>
               <span className="eyebrow">La maison</span>
               <p className="display-lg text-ink mt-4">{chef.name}</p>
-              <p className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-paprika mt-1">
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.12em] text-terracotta mt-1">
                 {chef.role}
               </p>
               <p className="mt-5 font-body text-lg text-ink-soft leading-relaxed max-w-xl">
@@ -223,7 +223,7 @@ export default function Home() {
             {reviews.map((r, i) => (
               <Reveal key={r.name} delay={i * 90}>
                 <figure className="border border-line rounded-sm p-7 h-full flex flex-col bg-cream">
-                  <span className="text-paprika tracking-[0.2em]">★★★★★</span>
+                  <span className="text-terracotta tracking-[0.2em]">★★★★★</span>
                   <blockquote className="mt-4 font-body text-lg text-ink leading-relaxed flex-1">
                     « {r.text} »
                   </blockquote>
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* ============ FOOTER ============ */}
-      <footer className="bg-wine text-cream px-5 sm:px-8 pt-16 pb-8">
+      <footer className="bg-basil text-cream px-5 sm:px-8 pt-16 pb-8">
         <div className="mx-auto max-w-[1320px]">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <div>
@@ -253,7 +253,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 pt-6 border-t border-line-cream flex flex-col sm:flex-row gap-4 justify-between font-display text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-cream/55">
-            <span>Projet de démonstration — enseigne fictive. Aucun établissement réel.</span>
+            <span>Refonte concept — proposition de site indépendante, non officielle et sans affiliation avec l'établissement.</span>
             <span>
               Conçu &amp; développé par{" "}
               <a
