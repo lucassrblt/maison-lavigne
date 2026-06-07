@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { resto } from "@/lib/data";
 
 const links = [
-  { href: "#carte", label: "La carte" },
   { href: "#chef", label: "La maison" },
+  { href: "#carte", label: "Carte" },
   { href: "#ambiance", label: "Ambiance" },
+  { href: "#reserver", label: "Réservation" },
   { href: "#avis", label: "Avis" },
 ];
 
@@ -31,14 +32,19 @@ export default function Nav() {
       }}
     >
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8 flex items-center justify-between h-[74px]">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-script text-3xl text-ink leading-none">{resto.name}</span>
-          <span className="font-display text-[0.54rem] font-bold uppercase tracking-[0.24em] text-rosso mt-0.5">
-            {resto.tagline}
+        <a href="#top" className="flex items-center gap-3">
+          <span className="emblem" aria-hidden>
+            LB
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-script text-3xl text-ink leading-none">{resto.name}</span>
+            <span className="font-display text-[0.54rem] font-bold uppercase tracking-[0.24em] text-rosso mt-0.5">
+              {resto.tagline}
+            </span>
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.href}
@@ -48,7 +54,7 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="#reserver" className="btn">
+          <a href="#reserver" className="btn btn-verde">
             Réserver
           </a>
         </nav>

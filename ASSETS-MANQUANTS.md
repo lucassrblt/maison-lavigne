@@ -30,7 +30,20 @@ est distante). Conserver le ratio indiqué pour ne pas casser la mise en page.
 matière (pâte, fromage filant, pizza au four). Prévoir aussi 3–5 photos de plats au cas où
 l'on voudrait illustrer la carte plus tard.
 
-## 2. Décor & identité (rendus en CSS/SVG — upgrades optionnels)
+## 2. Affiches apéritif de la carte (placeholders en place)
+
+La section « La Carte » encadre le menu de **deux affiches apéritif vintage**, comme sur la
+maquette. Ce sont des **placeholders** (`.ph`, kicker « Affiche vintage »).
+
+| Clé (`data-asset`) | Emplacement | Description | Ratio | Format conseillé |
+|---|---|---|---|---|
+| `affiche-aperitivo-1` | Carte, colonne gauche | Affiche apéritif vintage (gauche) | 3 / 5 | ~720×1200, PNG/WebP |
+| `affiche-aperitivo-2` | Carte, colonne droite | Affiche apéritif vintage (droite) | 3 / 5 | ~720×1200, PNG/WebP |
+
+> ⚠️ **À produire en artwork ORIGINAL** (voir §4). Ne **pas** réutiliser de vraies affiches
+> Campari / Cinzano (marques déposées).
+
+## 3. Décor & identité (rendus en CSS/SVG — upgrades optionnels)
 
 Ces éléments sont **déjà produits** dans le code (pas de placeholder gris), mais un·e
 graphiste pourrait les remplacer par des versions dessinées sur mesure pour gagner en finesse :
@@ -43,10 +56,13 @@ graphiste pourrait les remplacer par des versions dessinées sur mesure pour gag
 | Icônes du bandeau (pizza, pâtes, halal, végé) | Bandeau rosso | SVG de trait inline | Pictos vintage dessinés |
 | Wordmark « La Barcarola » | Nav + footer | Police *Dancing Script* | Logo lettré sur mesure |
 
-## 3. ⚠️ Propriété intellectuelle
+## 4. ⚠️ Propriété intellectuelle
 
 La maquette d'inspiration montrait des **affiches publicitaires Campari / Cinzano**.
-Elles ont été **volontairement écartées** : ce sont des **marques déposées**, leur
-reproduction sur le site commercial d'un établissement est risquée. Si une ambiance
-« affiche apéritif » est souhaitée plus tard, faire réaliser un **artwork original**
-(non dérivé d'une marque existante).
+Les emplacements sont **reproduits** dans la carte, mais **uniquement sous forme de
+placeholders** (`affiche-aperitivo-1/2`) : aucune affiche de marque n'est intégrée.
+
+Campari, Cinzano (et autres) sont des **marques déposées** — reproduire leurs visuels sur
+le site commercial d'un établissement est risqué. Avant la mise en ligne, remplacer les
+placeholders par un **artwork ORIGINAL** dans l'esprit « affiche apéritif italienne »
+(création dédiée, non dérivée d'une marque existante).

@@ -81,13 +81,10 @@ export default function Home() {
               </a>
             </div>
             <div
-              className="reveal mt-8 flex items-center gap-3 font-display text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-ink-soft"
+              className="reveal mt-8 font-display text-[0.72rem] font-bold uppercase tracking-[0.18em] text-rosso"
               style={{ animationDelay: "0.6s" }}
             >
-              <span className="text-rosso text-base tracking-[0.1em]">★★★★★</span>
-              <span>9,4 / 10 · 128 avis</span>
-              <span className="opacity-40">—</span>
-              <span>{resto.address.split(",")[0]}</span>
+              {resto.area} · {resto.address.split(",")[0]}
             </div>
           </div>
 
@@ -145,20 +142,50 @@ export default function Home() {
       <section id="carte" className="px-5 sm:px-8 py-24 sm:py-32">
         <div className="mx-auto max-w-[1320px]">
           <Reveal>
-            <div className="flex items-baseline gap-4 mb-3">
-              <span className="eyebrow">01</span>
-              <h2 className="display-md text-ink">La Carte</h2>
+            <div className="text-center">
+              <span className="eyebrow">01 — La carta</span>
+              <h2 className="display-md text-ink mt-2">La Carte</h2>
+              <p className="font-script text-2xl text-gold mt-1">
+                Pizze al forno, pasta fresca, dolci della casa.
+              </p>
             </div>
-            <div className="rule-fancy mb-10">
+            <div className="rule-fancy max-w-xl mx-auto mt-5 mb-12">
               <span>✦</span>
             </div>
-            <p className="font-script text-2xl text-gold -mt-6 mb-10">
-              Pizze al forno, pasta fresca, dolci della casa.
-            </p>
           </Reveal>
-          <Reveal delay={80}>
-            <div className="vintage-frame p-4 sm:p-8">
-              <Menu />
+
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <Reveal className="hidden lg:block lg:col-span-3">
+              <Placeholder
+                label="Affiche apéritif (artwork original)"
+                assetKey="affiche-aperitivo-1"
+                kicker="Affiche vintage"
+                ratio="3 / 5"
+              />
+            </Reveal>
+            <Reveal delay={80} className="lg:col-span-6">
+              <div className="vintage-frame p-4 sm:p-7">
+                <Menu />
+              </div>
+            </Reveal>
+            <Reveal delay={120} className="hidden lg:block lg:col-span-3">
+              <Placeholder
+                label="Affiche apéritif (artwork original)"
+                assetKey="affiche-aperitivo-2"
+                kicker="Affiche vintage"
+                ratio="3 / 5"
+              />
+            </Reveal>
+          </div>
+
+          <Reveal delay={120}>
+            <div className="text-center mt-12">
+              <a
+                href="#carte"
+                className="link-u font-display text-xs font-bold uppercase tracking-[0.16em] text-rosso"
+              >
+                Voir la carte complète →
+              </a>
             </div>
           </Reveal>
         </div>

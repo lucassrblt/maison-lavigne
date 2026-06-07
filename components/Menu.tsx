@@ -28,7 +28,7 @@ export default function Menu() {
   return (
     <div>
       {/* Onglets catégories */}
-      <div className="flex flex-wrap gap-2 border-b border-line pb-5">
+      <div className="flex flex-wrap justify-center gap-2 border-b border-line pb-5">
         {categories.map((c) => {
           const active = c === cat;
           return (
@@ -51,7 +51,7 @@ export default function Menu() {
       </div>
 
       {/* Filtres régime */}
-      <div className="flex flex-wrap items-center gap-2 mt-5">
+      <div className="flex flex-wrap items-center justify-center gap-2 mt-5">
         <span className="font-display text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-ink-soft mr-1">
           Filtrer :
         </span>
@@ -83,7 +83,7 @@ export default function Menu() {
       </div>
 
       {/* Plats */}
-      <div className="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-1">
+      <div className="mt-8 grid gap-y-1">
         {dishes.length === 0 && (
           <p className="font-body italic text-ink-soft py-8">
             Aucun plat ne correspond à ces filtres dans cette catégorie.

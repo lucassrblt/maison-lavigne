@@ -17,6 +17,11 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Respecte la préférence « moins d'animations » : on affiche directement.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const id = requestAnimationFrame(() => setShown(true));
+      return () => cancelAnimationFrame(id);
+    }
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
